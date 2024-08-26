@@ -17,11 +17,8 @@ from e_alert import send_telegram_alert
 from f_emotion import classify_face, draw_selected_landmarks
 from g_pose import detect_action
 
-# Initialize video capture and tracker
-path1 = r'\women_safety_real_time_surveillence\vid1.mp4'
-path2 = r'\women_safety_real_time_surveillence\vid2.mp4'
 
-webcam = cv2.VideoCapture(path2)
+webcam = cv2.VideoCapture(0)
 tracker = CentroidTracker()
 
 mp_holistic = mp.solutions.holistic.Holistic(static_image_mode=False, min_detection_confidence=0.5)
@@ -93,7 +90,7 @@ try:
                             draw_selected_landmarks(person_image, results.face_landmarks)  # Use the imported draw_selected_landmarks function
 
                             # Alert condition: Female detected alone at night
-                            if n == 1 and 'female' in gender_label :#and (time.localtime().tm_hour >= 18 or time.localtime().tm_hour < 6):
+                            if n == 1 and 'female' in gender_label and (time.localtime().tm_hour >= 18 or time.localtime().tm_hour < 6):
                                 send_telegram_alert(frame, "Female detected alone at night!")
                                 print("Alert sent: Female detected alone at night.")
                         else:
