@@ -1,5 +1,5 @@
 
-# Women Surveillance System
+# Women_Safety_Analytics
 
 This project is a real-time women surveillance system that analyzes CCTV footage or live video feeds to ensure the safety of women. The system features several functionalities, including an alert system that notifies authorities when a woman is alone at night or surrounded by suspicious individuals. Alerts are triggered based on the woman’s facial emotions.
 
@@ -18,7 +18,7 @@ To run this project, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/ShubhamNiranjan/Surveillence_system.git
+    git clone https://github.com/ShubhamNiranjan/Women_Safety_Analytics.git
     ```
 
 2. Create a virtual environment:
@@ -30,7 +30,7 @@ To run this project, follow these steps:
 
     Using `conda`:
     ```bash
-    conda create -n env python=3.8
+    conda create -n env python
     ```
 
 3. Activate the virtual environment:
@@ -55,15 +55,6 @@ To run this project, follow these steps:
 
     ```bash
     python main.py
-    ```
-
-## Usage
-
-- Two sample video files are provided in the repository to test the system. 
-- You can also use your own video files or activate the webcam by modifying the command in the code:
-
-    ```python
-    cv2.VideoCapture(0)  # Use 0 for the default webcam
     ```
 
 ## Future Enhancements
